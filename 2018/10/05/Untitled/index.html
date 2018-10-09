@@ -120,7 +120,16 @@
 <meta property="og:image" content="https://evnzhang.github.io/images/4.png">
 <meta property="og:image" content="https://evnzhang.github.io/images/5.png">
 <meta property="og:image" content="https://evnzhang.github.io/images/6.png">
-<meta property="og:updated_time" content="2018-10-08T14:11:28.792Z">
+<meta property="og:image" content="https://evnzhang.github.io/images/7.png">
+<meta property="og:image" content="https://evnzhang.github.io/images/15.png">
+<meta property="og:image" content="https://evnzhang.github.io/images/12.png">
+<meta property="og:image" content="https://evnzhang.github.io/images/11.png">
+<meta property="og:image" content="https://evnzhang.github.io/images/13.png">
+<meta property="og:image" content="https://evnzhang.github.io/images/14.png">
+<meta property="og:image" content="https://evnzhang.github.io/images/16.png">
+<meta property="og:image" content="https://evnzhang.github.io/images/17.png">
+<meta property="og:image" content="https://evnzhang.github.io/images/qrcode_for_gh_026a82bf3f94_258.jpg">
+<meta property="og:updated_time" content="2018-10-09T02:15:23.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+github+Hexo editor搭建自己的博客（Mac）">
 <meta name="twitter:description" content="#分享是提高认知的唯一途径# 相信很多技术咖一直都有很多idea，但总会选择拖延式实现，慢慢的，最后选择让这些idea消磨殆尽。有人说，灵感需要捕抓，有思想的人或者更充实吧。说干就干，我今天给大家分享一下自己搭建Hexo的全过程。">
@@ -345,7 +354,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-08 22:11:28" itemprop="dateModified" datetime="2018-10-08T22:11:28+08:00">2018-10-08</time>
+                <time title="Modified: 2018-10-09 10:15:23" itemprop="dateModified" datetime="2018-10-09T10:15:23+08:00">2018-10-09</time>
               
             
           </span>
@@ -393,7 +402,7 @@
 <li>//等待success</li>
 </ul>
 <p><strong>快速开始</strong></p>
-<p>在终端输入</p>
+<p>#在终端输入</p>
 <ul>
 <li>hexo i blog //i是init的缩写，blog是你的博客项目名，你可以自己自定义</li>
 <li>cd blog //切换到站点根目录</li>
@@ -417,6 +426,7 @@
 <li>hexo s //部署到本地</li>
 </ul>
 <p>//在浏览器打开输入 localhost:4000 查看效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">证明创建文章成功，“我的第一篇博客”这个md文件会创建在source/_posts/的文件下。该md文件在自动生成时会带有一些属性：</span><br><span class="line"></span><br><span class="line">title:   定义了博文的标题</span><br><span class="line">date:  定义了创作博文的时间</span><br><span class="line">tags:  定义了博文的标签</span><br><span class="line">除了这个三个属性以外我们还可以扩展一些属性：</span><br><span class="line">update:  定义了最后修改的时间</span><br><span class="line">comments：定义能否评论此博文(默认为true)</span><br><span class="line">categories: 定义了博文的种类</span><br></pre></td></tr></table></figure>
 <p>next主题有三种，你可自己选择切换使用：</p>
 <ul>
 <li>Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</li>
@@ -438,7 +448,58 @@
 <p>3.3 按格式输入项目名称</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">切记：一定要注意规范！！</span><br></pre></td></tr></table></figure>
 <p><img src="/images/6.png" alt=""></p>
-<p>3.4 </p>
+<p>3.4 修改hexo站点的配置文件</p>
+<p><img src="/images/7.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">易踩坑点：冒号后面一定要一个空格，type，repo，branch一定要对齐！！修改后记得保存</span><br></pre></td></tr></table></figure>
+<p>3.5 通过SSH方式将hexo项目提交到github</p>
+<p>#检查本机是否存在ssh公钥</p>
+<ul>
+<li>cd ~./ssh</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果以前已经生成过ssh密钥对，那么就存在这个.ssh目录，目录下有id_rsa.pub公钥文件;否则需要重新生成密钥</span><br></pre></td></tr></table></figure>
+<p>#创建新的SSH密钥对</p>
+<ul>
+<li>ssh-keygen -t rsa -C”<a href="mailto:your_email@example.com" target="_blank" rel="noopener">your_email@example.com</a>“ </li>
+<li>Enter passphrase (empty for no passphrase):[输入密码]</li>
+<li>Enter same passphrase again: [再次输入密码]</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">到这里，SSH密钥对就生成了，接下来将id_rsa.pub文件用文本编辑器打开，将其中的全部字符串拷贝，并粘贴到web版的github.com中SSH公钥设置内。</span><br></pre></td></tr></table></figure>
+<p>#查看或编辑密钥文件</p>
+<ul>
+<li>cat id_rsa.pub //查看密钥文件</li>
+<li>vim id_rsa.pub //编辑密钥文件</li>
+</ul>
+<p><img src="/images/15.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我是直接输入vim命令进去的，很粗暴，但要注意进入后不要编辑，直接复制密钥，然后shift+：，输入q退出。</span><br></pre></td></tr></table></figure>
+<p><img src="/images/12.png" alt=""></p>
+<p>#将密钥添加到github上</p>
+<p><img src="/images/11.png" alt=""><br><img src="/images/13.png" alt=""><br><img src="/images/14.png" alt=""></p>
+<p>#测试是否连接成功</p>
+<ul>
+<li>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">本机就会向github发出一个连接请求，随后会让你输入一些安全认证和请求获取授权到提示，要选择允许。如果github的服务器返回：</span><br></pre></td></tr></table></figure>
+<p><img src="/images/16.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这就说明本地的git已经能够成功与github服务器通信了。（不用担心上面的访问被拒绝的提示）。</span><br></pre></td></tr></table></figure>
+<p><strong>4. Hexo-editor一款简洁的Hexo Web编辑器</strong></p>
+<p>#获取编辑器</p>
+<ul>
+<li>git clone <a href="https://github.com/tajpure/hexo-editor.git" target="_blank" rel="noopener">https://github.com/tajpure/hexo-editor.git</a><br>#初始化</li>
+<li>cd hexo-editor</li>
+<li>npm install –production</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">您可以在_config.yml中更改这些变量以进行配置。</span><br><span class="line">如果您在桌面中使用它，请将“local”更改为true，然后您可以在不登录的情况下使用它。</span><br><span class="line">如果将其部署在服务器上，请使用默认值“false”。您需要授权。</span><br></pre></td></tr></table></figure>
+<p>#base_dir（绝对路径）//我的绝对路径示例：Users/evn/pm<br>将您的hexo博客目录设置为“base_dir”。</p>
+<p><img src="/images/17.png" alt=""></p>
+<p>#如果需要部署hexo博客，则应将SSH密钥添加到目标计算机的authorized_keys。</p>
+<p>#Hexo Editor的默认端口是2048</p>
+<p>#开始<br>npm start //在hexo-editor路径下执行</p>
+<p>如果你是部署到本地的，访问：locallhost:2048</p>
+<p>文档地址：<a href=""></a><a href="https://github.com/tajpure/hexo-editor/wiki" target="_blank" rel="noopener">https://github.com/tajpure/hexo-editor/wiki</a></p>
+<blockquote>
+</blockquote>
+<p>联系我</p>
+<p><img src="/images/qrcode_for_gh_026a82bf3f94_258.jpg" alt=""></p>
 
       
     </div>
